@@ -36,6 +36,16 @@ fgx[2] = cvs.width;
 
 
 
+var b_die = new Image();
+b_die.src="database/b2_die.png";
+
+var bang = {};
+bang[1] = new Image();
+bang[2] = new Image();
+bang[3] = new Image();
+bang[4] = new Image();
+bang[5] = new Image();
+bang[6] = new Image();
 
 var bird = {};
 bird[1] = new Image();
@@ -73,6 +83,12 @@ fg[2].src = "database/fg.png";
 bird[1].src = "database/b1.png";
 bird[2].src = "database/b2.png";
 bird[3].src = "database/b3.png";
+bang[1].src = "database/bang_b1.png";
+bang[2].src = "database/bang_b2.png";
+bang[3].src = "database/bang_b3.png";
+bang[4].src = "database/bang_b4.png";
+bang[5].src = "database/bang_b5.png";
+bang[6].src = "database/bang_b6.png";
 pipeNorth[1].src = "database/pipeNorth.png";
 pipeNorth[2].src = "database/pipeNorth.png";
 pipeNorth[3].src = "database/pipeNorth.png";
@@ -86,7 +102,7 @@ var bird_Wigth = 46;
 var bird_Height = 34;
 var count = 0;
 var states = {Menu: 0, Game: 1, Gameover: 2};
-
+var bangCount = 0;
 
 var gravity = 5.2;
 var velocity_y = 0;

@@ -5,14 +5,17 @@ function Game(){
 		  Gameloop();
 		  Physics();
 		}else{
-			GameOver();
+			GameOver();		
 			Physics();
 		}
 		count = 0;
 	}
 	count++;
 	
-
+	if(gravity == 0 && bangCount < 7){
+		AnimationBang();
+		j += 1;
+	}
 	
 	requestAnimationFrame(Game);
 }
@@ -137,7 +140,9 @@ if(gravity != 0){
 	ctx.drawImage(fg[1],fgx[1],bg.height - fg[1].height);
 	ctx.drawImage(fg[2],fgx[2],bg.height - fg[2].height);
 
-	Bird_Die();
+	if(bangCount == 0){
+		Bird_Die();
+	}
 }
 
 
