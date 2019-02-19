@@ -16,6 +16,7 @@
 
 <script src="bird.js"></script>
 <script src="game.js"></script>
+<script src="menu.js"></script>
 <script>
 var cvs = document.getElementById('canvas');
 var ctx = cvs.getContext('2d');
@@ -57,6 +58,9 @@ pipeNorth[3] = new Image();
 pipeSouth[1] = new Image();
 pipeSouth[2] = new Image();
 pipeSouth[3] = new Image();
+
+var titleGame = new Image();
+titleGame.src = "database/title.png";
 
 var pipeS_y = {};
 var pipeN_x = {};
@@ -101,7 +105,6 @@ var j = 1;
 var bird_Wigth = 46;
 var bird_Height = 34;
 var count = 0;
-var states = {Menu: 0, Game: 1, Gameover: 2};
 var bangCount = 0;
 
 var gravity = 5.2;
@@ -113,7 +116,44 @@ var F = 0;
 var m = 0.5;
 var life = true;
 
-Game();
+
+var state = {
+		'menu' : true,
+		'game' : false,
+		'gameover' : false
+	};
+var stateName = {};
+	stateName[0] = "menu";
+	stateName[1] = "game";
+	stateName[2] = "gameover";
+
+
+function main(){
+for (var i = 0; i < 3; i++){
+		if (GameState(stateName[i]) != false){
+				console.log('Мы находимся в состоянии: ' + stateName[i]);
+				Start(stateName[i]); 
+		}
+	}
+	requestAnimationFrame(main);
+}
+function GameState(Name){
+	if(state[Name] == true){
+		return stateName;
+	}
+	else return 0;
+}		
+
+function Start(Name){
+	if(Name == "menu"){
+		Menu();
+	}else
+	if(Name == "game"){
+		Game();
+	}
+}
+
+main();
 
 </script>
 </body>

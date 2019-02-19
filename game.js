@@ -17,7 +17,7 @@ function Game(){
 		j += 1;
 	}
 	
-	requestAnimationFrame(Game);
+	
 }
 
 document.addEventListener("keydown",fly);
