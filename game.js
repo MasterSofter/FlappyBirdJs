@@ -20,7 +20,7 @@ function Game(){
 	
 }
 
-document.addEventListener("keydown",fly);
+document.addEventListener("click",fly);
 
 function fly(){
 	F = 1005;

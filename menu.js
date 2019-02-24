@@ -1,7 +1,7 @@
 function Menu(){
 	MenuAnimation();
 }
-document.addEventListener("keydown",oncklick);
+document.addEventListener("click",oncklick);
 function oncklick(){
 	state['menu'] = false;
 	state['game'] = true;
